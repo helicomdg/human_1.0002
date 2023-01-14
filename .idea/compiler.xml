@@ -12,7 +12,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="human_1.0002" target="19" />
-      <module name="orm-hibernate" target="11" />
+      <module name="orm-hibernate" target="16" />
     </bytecodeTargetLevel>
   </component>
 </project>

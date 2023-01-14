@@ -1,5 +1,4 @@
 package service;
-
 import configuration.JPAConfiguration;
 import entity.CarDealership;
 import repository.CarDealershipRepository;
@@ -15,12 +14,12 @@ public class CarDealershipService {
         return carDealershipRepository.createCarDealership(carDealership);
     }
 
-//    public CarDealership updateCarDealership(CarDealership carDealership) {
-//        return carDealershipRepository.updateCardealership(carDealership);
-//    }
-//
-//    public CarDealership deleteCarDealership(CarDealership carDealership) {
-//        return carDealershipRepository.deleteCardealership(carDealership);
-//    }
+    public CarDealership updateCarDealership(CarDealership carDealership) {
+        return carDealershipRepository.updateCardealership(carDealership);
+    }
+
+    public CarDealership deleteCarDealership(CarDealership carDealership) {
+        return carDealershipRepository.deleteCardealership(carDealership);
+    }
 
 }

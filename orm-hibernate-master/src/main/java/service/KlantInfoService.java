@@ -16,11 +16,12 @@ public class KlantInfoService {
         return klantInfoRepository.createKlantInfo(klantInfo);
     }
 
-//    public KlantInfo updateKlantInfo(KlantInfo klantInfo) {
-//        return klantInfoRepository.updateKlantInfo(klantInfo);
-//    }
-//
-//    public KlantInfo deleteKlantInfo(KlantInfo klantInfo) {
-//        return klantInfoRepository.deleteKlantInfo(klantInfo);
-//    }
+    public KlantInfo updateKlantInfo(KlantInfo klantInfo) {
+        return klantInfoRepository.updateKlantInfo(klantInfo);
+    }
+
+    public KlantInfo deleteKlantInfo(KlantInfo klantInfo) {
+        return klantInfoRepository.deleteKlantInfo(klantInfo);
+    }
+
 }

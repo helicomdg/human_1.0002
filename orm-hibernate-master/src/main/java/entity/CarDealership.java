@@ -1,5 +1,4 @@
 package entity;
-
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -26,7 +25,6 @@ public class CarDealership {
             fetch = FetchType.EAGER
     )
     private Set<Car> car = new HashSet();
-//    private Set<Klant> klant = new HashSet();
 
     public CarDealership() {
     }
@@ -41,10 +39,6 @@ public class CarDealership {
         this.Name = name;
     }
 
-//    public CarDealership(String location) {
-//        this.Location = location;
-//    }
-
     public Integer getId() {
         return this.Id;
     }
@@ -53,9 +47,6 @@ public class CarDealership {
         this.Id = id;
     }
 
-    public String getName() {
-        return this.Name;
-    }
 
     public void setName(String name) {
         this.Name = name;

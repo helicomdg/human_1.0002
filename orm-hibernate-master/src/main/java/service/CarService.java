@@ -21,7 +21,7 @@ public class CarService {
         return repository.createCar(car);
     }
 
-//    public Car  updateCar(Car car) { return repository.updateCar(car);}
-//
-//    public Car deleteCar(Car car) { return repository.deleteCar(car);}
+    public Car  updateCar(Car car) { return repository.updateCar(car);}
+
+    public Car deleteCar(Car car) { return repository.deleteCar(car);}
 }

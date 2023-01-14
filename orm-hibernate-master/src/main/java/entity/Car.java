@@ -1,5 +1,4 @@
 package entity;
-
 import jakarta.persistence.*;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -10,8 +9,6 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
-
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.List;
@@ -73,4 +70,5 @@ public class Car {
 
     public void setCarId(KlantInfo detail) {
     }
+
 }

@@ -1,9 +1,7 @@
 package repository;
-
 import entity.CarDealership;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
-
 import java.util.List;
 
 public class CarDealershipRepository {
@@ -32,31 +30,31 @@ public class CarDealershipRepository {
         return carDealership;
     }
 
-//    public CarDealership deleteCardealership(CarDealership carDealership){
-//        try{
-//            entityManager.getTransaction().begin();
-//            entityManager.find(CarDealership.class, carDealership.getId());
-//            if(carDealership != null)  entityManager.remove(carDealership);
-//            entityManager.getTransaction().commit();
-//        }catch (Exception e){
-//            e.printStackTrace();
-//            entityManager.getTransaction().rollback();
-//        }
-//        return carDealership;
-//    }
-//
-//
-//    public CarDealership updateCardealership(CarDealership carDealership){
-//        try{
-//            entityManager.getTransaction().begin();
-//            entityManager.find(CarDealership.class, carDealership.getId());
-//            entityManager.merge(carDealership);
-//            entityManager.getTransaction().commit();
-//        }catch (Exception e){
-//            e.printStackTrace();
-//            entityManager.getTransaction().rollback();
-//        }
-//        return carDealership;
-//    }
+    public CarDealership deleteCardealership(CarDealership carDealership){
+        try{
+            entityManager.getTransaction().begin();
+            entityManager.find(CarDealership.class, carDealership.getId());
+            if(carDealership != null)  entityManager.remove(carDealership);
+            entityManager.getTransaction().commit();
+        }catch (Exception e){
+            e.printStackTrace();
+            entityManager.getTransaction().rollback();
+        }
+        return carDealership;
+    }
+
+
+    public CarDealership updateCardealership(CarDealership carDealership){
+        try{
+            entityManager.getTransaction().begin();
+            entityManager.find(CarDealership.class, carDealership.getId());
+            entityManager.merge(carDealership);
+            entityManager.getTransaction().commit();
+        }catch (Exception e){
+            e.printStackTrace();
+            entityManager.getTransaction().rollback();
+        }
+        return carDealership;
+    }
 
 }

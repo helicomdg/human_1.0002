@@ -1,7 +1,7 @@
 package service;
-
 import configuration.JPAConfiguration;
 import entity.Car;
+import entity.Garage;
 import repository.GarageRepository;
 
 public class GarageService {
@@ -15,12 +15,12 @@ public class GarageService {
         return garageRepository.createGarage(garage);
     }
 
-//    public Garage updateGarage(Garage garage) {
-//        return garageRepository.updateGarage(garage);
-//    }
-//
-//    public Garage deleteGarage(Garage garage) {
-//        return garageRepository.deleteGarage(garage);
-//    }
+    public Garage updateGarage(Garage garage) {
+        return garageRepository.updateGarage(garage);
+    }
+
+    public Garage deleteGarage(Garage garage) {
+        return garageRepository.deleteGarage(garage);
+    }
 
 }

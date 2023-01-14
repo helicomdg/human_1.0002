@@ -1,5 +1,4 @@
 package repository;
-
 import entity.Car;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
@@ -40,15 +39,20 @@ public class CarRepository {
         return car != null ? Optional.of(car) : Optional.empty();
     }
 
+    public Car updateCar(Car car) {
+        return null;
+    }
+
+    public Car deleteCar(Car car) {
+        return null;
+    }
+
 //    public void deleteById(Integer id) {
 //        // Retrieve the model with this ID
 //        Car car = entityManager.find(Car.class, id);
 //        if (car != null) {
 //            try {
-//                // Start a transaction because we're going to change the database
 //                entityManager.getTransaction().begin();
-//
-//                // Remove all references to this superhero in its movies
 //                car.getModel().forEach(model -> {
 //                    model.getModel().remove(car);
 //                });
@@ -79,4 +83,5 @@ public class CarRepository {
 //
 //        return car;
 //    }
+
 }

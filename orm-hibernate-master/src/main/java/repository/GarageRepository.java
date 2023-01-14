@@ -1,10 +1,8 @@
 package repository;
-
 import entity.Car;
 import entity.Garage;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
-
 import java.util.List;
 
 public class GarageRepository {
@@ -34,31 +32,30 @@ public class GarageRepository {
         return garage;
     }
 
-//    public Garage deleteGarage(Garage garage){
-//        try{
-//            entityManager.getTransaction().begin();
-//            entityManager.find(Garage.class, garage.getId());
-//            if(Garage != null)  entityManager.remove(Garage);
-//            entityManager.getTransaction().commit();
-//        }catch (Exception e){
-//            e.printStackTrace();
-//            entityManager.getTransaction().rollback();
-//        }
-//        return garage;
-//    }
-//
-//
-//    public Garage updateGarage(Garage garage){
-//        try{
-//            entityManager.getTransaction().begin();
-//            entityManager.find(Garage.class, garage.getId());
-//            entityManager.merge(garage);
-//            entityManager.getTransaction().commit();
-//        }catch (Exception e){
-//            e.printStackTrace();
-//            entityManager.getTransaction().rollback();
-//        }
-//        return garage;
-//    }
+    public Garage deleteGarage(Garage garage){
+        try{
+            entityManager.getTransaction().begin();
+            entityManager.find(Garage.class, garage.getId());
+            if(Garage != null)  entityManager.remove(Garage);
+            entityManager.getTransaction().commit();
+        }catch (Exception e){
+            e.printStackTrace();
+            entityManager.getTransaction().rollback();
+        }
+        return garage;
+    }
+
+    public Garage updateGarage(Garage garage){
+        try{
+            entityManager.getTransaction().begin();
+            entityManager.find(Garage.class, garage.getId());
+            entityManager.merge(garage);
+            entityManager.getTransaction().commit();
+        }catch (Exception e){
+            e.printStackTrace();
+            entityManager.getTransaction().rollback();
+        }
+        return garage;
+    }
 
 }
