@@ -52,29 +52,27 @@ public class Menu {
 
     private static void Order() {
 
-        CarDealershipService carDealershipService = new CarDealershipService();
         KlantService klantService = new KlantService();
         KlantInfoService klantInfoService = new KlantInfoService();
         CarService carService = new CarService();
+        CarDealershipService carDealershipService = new CarDealershipService();
         Scanner s = new Scanner(System.in);
         int ch;
         do {
             System.out.println("Order list:");
             System.out.println("1.Order");
-//            System.out.println("2.Display");
+            System.out.println("2.Display");
 //            System.out.println("3.SEARCH");
             System.out.println("9.exit");
             System.out.print("Enter Your Choice : ");
             ch = s.nextInt();
 
             boolean found = false;
-            List<Klant> klanten;
-            String first_name;
             switch (ch) {
                 case 1:
-                    System.out.print("Enter first name : ");
-                    first_name = s.next();
-                    System.out.print("Enter last name : ");
+                    System.out.print("Enter first_name : ");
+                    String first_name = s.next();
+                    System.out.print("Enter last_name : ");
                     String last_name = s.next();
                     System.out.print("Enter email : ");
                     String email = s.next();
@@ -82,8 +80,8 @@ public class Menu {
                     String adress = s.next();
                     System.out.print("Enter bank : ");
                     String bank = s.next();
-                    System.out.print("Enter geboorte Datum : ");
-                    String geboorteDatum = s.next();
+                    System.out.print("Enter geboorteDatum : ");
+                    String geboorteDatum = s.nextLine();
                     System.out.print("Enter car brand : ");
                     String car_brand = s.next();
                     System.out.print("Enter car model : ");
@@ -98,14 +96,26 @@ public class Menu {
                     carDealershipService.createCarDealership(new CarDealership(name, location));
                     break;
 
-//                case 2:
-//                    System.out.println("_______________________");
-//                    klanten = klantService.getKlanten();
-//                    for (Klant klant : klanten) {
-//                        System.out.println("ID= " + klant.getId() + "  First_name= " + klant.getFirst_name() + "  Last_name= " + klant.getLast_name() + "  Email= " + klant.getEmail());
-//                    }
-//                    System.out.println("_______________________");
-//                    break;
+                case 2:
+                      System.out.println("_______________________");
+                    List<Klant> klanten = klantService.getKlanten();
+                    List<KlantInfo> Info = klantInfoService.getInfo();
+                    List<Car> cars = carService.getCars();
+                    List<CarDealership> dealerships = carDealershipService.getDealerships();
+                    for (Klant klant : klanten) {
+                        System.out.println("ID= " + klant.getId() + "  First_name= " + klant.getFirst_name() + "  Last_name= " + klant.getLast_name() + "  Email= " + klant.getEmail());
+                    }
+                    for (KlantInfo klantInfo : Info) {
+                        System.out.println("ID= " + klantInfo.getId() + "  adress= " + klantInfo.getAdress() + "  bank= " + klantInfo.getBank() + "  geboorteDatum= " + klantInfo.getGeboorteDatum());
+                    }
+                    for (Car car : cars) {
+                        System.out.println("ID= " + car.getId() + "  car brand= " + car.getCar_brand() + "  model= " + car.getModel());
+                    }
+                    for (CarDealership carDealership : dealerships) {
+                        System.out.println("ID= " + carDealership.getId() + "  Shop= " + carDealership.getName() + "  location= " + carDealership.getLocation());
+                    }
+                    System.out.println("_______________________");
+                    break;
 //
 //                case 3:
 //                    found = false;
@@ -126,7 +136,7 @@ public class Menu {
 //                    break;
 
                 case 9:
-                    System.exit(0);
+                    Menu.menuInput();
             }
         } while (ch != 0);
     }
@@ -149,13 +159,10 @@ public class Menu {
             ch = s.nextInt();
 
             boolean found = false;
-            List<Klant> klanten;
-            List<KlantInfo> Info;
-            String first_name;
             switch (ch) {
                 case 1:
                     System.out.print("Enter first_name : ");
-                    first_name = s.next();
+                    String first_name = s.next();
                     System.out.print("Enter last_name : ");
                     String last_name = s.next();
                     System.out.print("Enter email : ");
@@ -172,8 +179,8 @@ public class Menu {
 
                 case 2:
                     System.out.println("_______________________");
-                    klanten = klantService.getKlanten();
-                    Info = klantInfoService.getInfo();
+                    List<Klant> klanten = klantService.getKlanten();
+                    List<KlantInfo> Info = klantInfoService.getInfo();
                     for (Klant klant : klanten) {
                         System.out.println("ID= " + klant.getId() + "  First_name= " + klant.getFirst_name() + "  Last_name= " + klant.getLast_name() + "  Email= " + klant.getEmail());
                     }
@@ -248,7 +255,7 @@ public class Menu {
                     }
                     break;
                 case 9:
-                    System.exit(0);
+                    Menu.menuInput();
             }
         } while (ch != 0);
     }
@@ -269,12 +276,11 @@ public class Menu {
             ch = s.nextInt();
 
             boolean found = false;
-            List<KlantInfo> Info;
             String first_name;
             switch (ch) {
                 case 1:
                     System.out.println("_______________________");
-                    Info = klantInfoService.getInfo();
+                    List<KlantInfo> Info = klantInfoService.getInfo();
                     for (KlantInfo klantInfo : Info) {
                         System.out.println("ID= " + klantInfo.getId() + "  adress= " + klantInfo.getAdress() + "  bank= " + klantInfo.getBank() + "  geboorteDatum= " + klantInfo.getGeboorteDatum());
                     }
@@ -346,7 +352,7 @@ public class Menu {
 //                    }
 //                    break;
                 case 9:
-                    System.exit(0);
+                    Menu.menuInput();
             }
         } while (ch != 0);
     }
@@ -370,13 +376,10 @@ public class Menu {
             ch = s.nextInt();
 
             boolean found = false;
-            List<Car> cars;
-            List<Garage> garages;
-            String car_brand;
             switch (ch) {
                 case 1:
                     System.out.print("Enter car_brand : ");
-                    car_brand = s.nextLine();
+                    String car_brand = s.nextLine();
                     System.out.print("Enter model : ");
                     String model = s.nextLine();
                     System.out.print("Enter aantal : ");
@@ -387,8 +390,8 @@ public class Menu {
 
                 case 2:
                     System.out.println("_______________________");
-                    cars = carService.getCars();
-                    garages = garageService.getGarages();
+                    List<Car> cars = carService.getCars();
+                    List<Garage> garages = garageService.getGarages();
                     for (Car car : cars) {
                         System.out.println("ID= " + car.getId() + "  car_brand= " + car.getCar_brand() + "  model= " + car.getModel());
                     }
@@ -460,7 +463,7 @@ public class Menu {
                     }
                     break;
                 case 9:
-                    System.exit(0);
+                    Menu.menuInput();
             }
         } while (ch != 0);
     }
@@ -532,7 +535,7 @@ public class Menu {
 //                    System.out.println("_______________________");
 //                    break;
                 case 9:
-                    System.exit(0);
+                    Menu.menuInput();
             }
         } while (ch != 0);
     }
@@ -555,12 +558,10 @@ public class Menu {
             ch = s.nextInt();
 
             boolean found = false;
-            List<CarDealership> dealerships;
-            String name;
             switch (ch) {
                 case 1:
                     System.out.print("Enter name : ");
-                    name = s.nextLine();
+                    String name = s.nextLine();
                     System.out.print("Enter location : ");
                     String location = s.nextLine();
                     carDealershipService.createCarDealership(new CarDealership(location, name));
@@ -568,7 +569,7 @@ public class Menu {
 
                 case 2:
                     System.out.println("_______________________");
-                    dealerships = carDealershipService.getDealerships();
+                    List<CarDealership> dealerships = carDealershipService.getDealerships();
                     for (CarDealership carDealership : dealerships) {
                         System.out.println("ID= " + carDealership.getId() + "  name= " + carDealership.getName() + "  Location= " + carDealership.getLocation());
                     }
@@ -636,7 +637,7 @@ public class Menu {
                     }
                     break;
                 case 9:
-                    System.exit(0);
+                    Menu.menuInput(); 
             }
         } while (ch != 0);
     }

@@ -15,7 +15,7 @@ public class GarageService {
     }
 
     public List<Garage> getGarages() {
-        return repository.getGarages();
+        return repository.getGarage();
     }
     public Car createGarage(Car garage){
         return repository.createGarage(garage);

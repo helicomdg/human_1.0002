@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Data</title>
+    <link rel="stylesheet" href="../css/car.css">
+    <script src="../js/script.js"></script>
+</head>
+<body>
+<table>
+    <tr>
+        <th>brand</th>
+        <th>model</th>
+        <th>aantal</th>
+    </tr>
+    <?php
+    foreach ($cars as $car) {
+      echo "<tr>";
+    echo "<td>" . $car['car_brand'] . "</td>";
+    echo "<td>" . $car['model'] . "</td>";
+    echo "<td>" . $garage['aantal'] . "</td>";
+    echo "</tr>";
+    }
+    ?>
+</table>
+<script src="car.js"></script>
+</body>
+</html>
+

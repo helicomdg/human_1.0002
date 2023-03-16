@@ -26,4 +26,7 @@ public class JPAConfiguration {
             factory.close();
         }
     }
+
+    public static void getEm() {
+    }
 }
