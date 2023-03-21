@@ -46,7 +46,6 @@ public class KlantRepository {
         return klant;
     }
 
-
     public Klant updateKlant(Klant klant){
         try{
             entityManager.getTransaction().begin();
@@ -58,6 +57,22 @@ public class KlantRepository {
             entityManager.getTransaction().rollback();
         }
         return klant;
+    }
+
+
+    public Klant getKlant(Long id) {
+        Klant klant1 = null;
+        try{
+        entityManager.getTransaction().begin();
+        String jpql = "select k from Klant k where k.id = :id";
+        TypedQuery<Klant> klant = entityManager.createQuery(jpql, Klant.class);
+        klant1 = klant.setParameter("id", id).getSingleResult();
+        entityManager.getTransaction().commit();
+    }catch (Exception e){
+        e.printStackTrace();
+        entityManager.getTransaction().rollback();
+    }
+        return klant1;
     }
 
 }

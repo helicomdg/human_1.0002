@@ -10,6 +10,7 @@ import java.util.List;
 public class KlantInfoService {
 
     private final KlantInfoRepository repository;
+    private KlantInfoService klantInfoDao;
 
     public KlantInfoService() {
         this.repository = new KlantInfoRepository(JPAConfiguration.getEntityManager());
@@ -29,6 +30,25 @@ public class KlantInfoService {
 
     public KlantInfo deleteKlantInfo(KlantInfo klantInfo) {
         return repository.deleteKlantInfo(klantInfo);
+    }
+
+    public KlantInfo getKlantInfoById(Long id) {
+        return klantInfoDao.getKlantInfoById(id);
+    }
+
+    public KlantInfo addKlantInfo(KlantInfo klantInfo) {
+        klantInfoDao.addKlantInfo(klantInfo);
+        return klantInfo;
+    }
+
+    public KlantInfo updateKlantInfo1(Long id, KlantInfo klantInfo) {
+        klantInfoDao.updateKlantInfo(klantInfo);
+        return klantInfo;
+    }
+
+    public boolean deleteKlantInfoById(Long id) {
+        klantInfoDao.deleteKlantInfoById(id);
+        return false;
     }
 
 }

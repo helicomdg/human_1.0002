@@ -1,11 +1,13 @@
 package service;
 import configuration.JPAConfiguration;
+import entity.Car;
 import entity.CarDealership;
 import repository.CarDealershipRepository;
 import java.util.List;
 
 public class CarDealershipService {
     private final CarDealershipRepository repository;
+    private CarDealershipService carDealershipDao;
 
     public CarDealershipService() {
         this.repository = new CarDealershipRepository(JPAConfiguration.getEntityManager());
@@ -25,6 +27,25 @@ public class CarDealershipService {
 
     public CarDealership deleteCarDealership(CarDealership carDealership) {
         return repository.deleteCardealership(carDealership);
+    }
+
+    public CarDealership getCarDealershipById(Long id) {
+        return carDealershipDao.getCarDealershipById(id);
+    }
+
+    public CarDealership addCarDealership(CarDealership carDealership) {
+        carDealershipDao.addCarDealership(carDealership);
+        return carDealership;
+    }
+
+    public CarDealership updateCarDealership1(Long id, CarDealership carDealership) {
+        carDealershipDao.updateCarDealership(carDealership);
+        return carDealership;
+    }
+
+    public boolean deleteCarDealershipById(Long id) {
+        carDealershipDao.deleteCarDealershipById(id);
+        return false;
     }
 
 }

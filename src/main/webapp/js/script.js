@@ -73,3 +73,49 @@ xhr.onload = function() {
 //     console.log(err);
 // })
 
+
+// Simple GET request using fetch
+fetch('https://example.com/data')
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error(error))
+
+// Simple POST request using fetch
+fetch('https://example.com/data', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        name: 'John Doe',
+        email: 'johndoe@example.com'
+    })
+})
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error(error))
+
+// Simple PUT request using fetch
+fetch('https://example.com/data/1', {
+    method: 'PUT',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        name: 'John Doe',
+        email: 'johndoe@example.com'
+    })
+})
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error(error))
+
+// Simple DELETE request using fetch
+fetch('https://example.com/data/1', {
+    method: 'DELETE',
+})
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error(error))
+
+
