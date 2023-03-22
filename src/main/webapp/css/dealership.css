@@ -1,0 +1,76 @@
+/* Set background color for the whole page */
+body {
+    background-color: #f5f5f5;
+}
+
+/* Center the form and title on the page */
+form, h1 {
+    width: 50%;
+    margin: 0 auto;
+}
+
+/* Style the title */
+h1 {
+    color: #00796b;
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-family: "Open Sans", sans-serif;
+}
+
+/* Style the form inputs */
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    font-size: 16px;
+    font-family: "Open Sans", sans-serif;
+    color: #333;
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus {
+    outline: none;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the create button */
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #009688;
+    font-size: 16px;
+    font-family: "Open Sans", sans-serif;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: #00796b;
+}
+
+/* Style the result div */
+#result {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: "Open Sans", sans-serif;
+    color: #333;
+}
+

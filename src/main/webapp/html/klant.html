@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+   <title>Klant</title>
+    <link rel="stylesheet" href="../css/klant.css">
+</head>
+<body style="color: white; background-color: #1d2630">
+
+<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" aria-label="Furni navigation bar">
+    <div class="container">
+        <a class="navbar-brand" >Admin Only<span>.</span></a>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <div class="text-center">
+        <h1 class="display-5 mb-5"><strong>KLANT</strong></h1>
+    </div>
+    <div class="main row justify-content-center">
+        <form action="http://localhost:8081/human_2_0_war_exploded/api/klant/create" id="create-klant-form" class="row justify-content-center mb-4" autocomplete="off" METHOD="post">
+            <!--            <div class="col-7 mb-3">-->
+            <!--                <label for="id">First Name</label>-->
+            <!--                <input class="form-control" id="id" type="number" placeholder="Klant Id" disabled>-->
+            <!--            </div>-->
+            <div class="col-7 mb-3">
+                <label for="first_name">First Name</label>
+                <input class="form-control" id="first_name" type="text" placeholder="First Name">
+            </div>
+            <div class="col-7 mb-3">
+                <label for="last_name">Last Name</label>
+                <input class="form-control" id="last_name" type="text" placeholder="Last Name">
+            </div>
+            <div class="col-7 mb-3">
+                <label for="email">Email</label>
+                <input class="form-control" id="email" type="text" placeholder="Email">
+            </div>
+            <div class="col-7">
+                <input type="submit" value="Create" class="btn btn-success">
+            </div>
+        </form>
+
+        <div class="col-10 mt-5">
+            <table id="klantentabel" class="table table-striped table-dark">
+                <thread>
+                    <tr>
+                        <th>Id</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                    </tr>
+                </thread>
+                <tbody id="klanten-table-body">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="../js/klant.js"></script>
+</body>
+</html>

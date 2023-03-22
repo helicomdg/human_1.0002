@@ -39,13 +39,34 @@ public class KlantService {
         return klant;
     }
 
+    public Klant createKlant1(String first_name, String last_name, String email) {
+        return repository.createKlant1(first_name, last_name, email);
+    }
+
     public static Klant updateKlant1(Long id, Klant klant) {
         klantDao.updateKlant(klant);
         return klant;
     }
+    public Klant updateKlant1(Long id, String first_name, String last_name, String email){
+        return repository.updateKlant1(id, first_name, last_name, email);
+    }
+    public Klant updateEmail(Long id, String email) {
+        return repository.updateEmail(id, email);
+    }
+    public Klant updateName(Long id,  String first_name, String last_name) {
+        return repository.updateName(id, first_name, last_name);
+    }
 
     public void removeKlant(Long id) {
         klantDao.removeKlant(id);
+    }
+
+    public Klant findKlantByid(Long id) {
+        return repository.findKlantByid(id);
+    }
+
+    public void deleteKlant1(Long id) {
+        repository.deleteKlant1(id);
     }
 
 }

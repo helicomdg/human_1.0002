@@ -1,28 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Car Data</title>
+    <title>Car App</title>
     <link rel="stylesheet" href="../css/car.css">
-    <script src="../js/script.js"></script>
 </head>
 <body>
-<table>
-    <tr>
-        <th>brand</th>
-        <th>model</th>
-        <th>aantal</th>
-    </tr>
-    <?php
-    foreach ($cars as $car) {
-      echo "<tr>";
-    echo "<td>" . $car['car_brand'] . "</td>";
-    echo "<td>" . $car['model'] . "</td>";
-    echo "<td>" . $garage['aantal'] . "</td>";
-    echo "</tr>";
-    }
-    ?>
-</table>
-<script src="car.js"></script>
+<h1>Car App</h1>
+<form id="create-car-form">
+    <label for="carbrand">carbrand:</label>
+    <input type="text" id="carbrand" name="carbrand"><br><br>
+    <label for="model">Model:</label>
+    <input type="text" id="model" name="model"><br><br>
+    <label for="year">Year:</label>
+    <input type="number" id="year" name="year"><br><br>
+    <button type="submit">Create Car</button>
+</form>
+<script src="../js/car.js"></script>
 </body>
 </html>
+
 
