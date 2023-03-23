@@ -21,7 +21,7 @@ public class CarController {
     @GET
     @Path("get/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getCarById(@PathParam("id") Long id) {
+    public Response findCarById(@PathParam("id") Long id) {
         Car car = carService.getCarById(id);
         if (car == null) {
             return Response.status(Response.Status.NOT_FOUND).build();

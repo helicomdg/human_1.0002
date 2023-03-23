@@ -65,17 +65,17 @@ const deleteForm = document.getElementById('deleteForm');
 // Function to render the list of dealerships
 const renderDealerships = (dealerships) => {
     // Clear the table
-    dealershipsTable.innerHTML = '';
+    dealershipsTable.innerHTML = '../html/dealership.html';
 
     // Add the headers
     const headersRow = document.createElement('tr');
-    headersRow.innerHTML = '<th>ID</th><th>Name</th><th>City</th><th>State</th>';
+    headersRow.innerHTML = '<th>ID</th><th>Name</th><th>Location</th>';
     dealershipsTable.appendChild(headersRow);
 
     // Add the rows
     for (const dealership of dealerships) {
         const row = document.createElement('tr');
-        row.innerHTML = `<td>${dealership.id}</td><td>${dealership.name}</td><td>${dealership.city}</td><td>${dealership.state}</td>`;
+        row.innerHTML = `<td>${dealership.id}</td><td>${dealership.name}</td><td>${dealership.location}</td>`;
         dealershipsTable.appendChild(row);
     }
 };
@@ -93,8 +93,8 @@ const createDealership = (event) => {
     const formData = new FormData(event.target);
     const dealership = {
         name: formData.get('name'),
-        city: formData.get('city'),
-        state: formData.get('state'),
+        location: formData.get('location'),
+
     };
     fetch('http://localhost:8081/human_2_0_war_exploded/api/dealership', {
         method: 'POST',
@@ -115,17 +115,14 @@ const updateDealership = (event) => {
     event.preventDefault();
     const formData = new FormData(document.querySelector("#updateDealershipForm"));
     const id = formData.get("id");
-    const name = formData.get("name");
-    const address = formData.get("address");
-    const phone = formData.get("phone");
-    const email = formData.get("email");
+    const location = formData.get("location");
 
 fetch(`http://localhost:8081/human_2_0_war_exploded/api/dealership/${id}`, {
     method: "PUT",
     headers: {
         "Content-Type": "application/json",
     },
-    body: JSON.stringify({ name, address, phone, email }),
+    body: JSON.stringify({ name, location}),
 })
     .then((response) => response.json())
     .then((data) => {

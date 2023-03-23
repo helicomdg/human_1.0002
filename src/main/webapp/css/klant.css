@@ -1,73 +1,74 @@
-/* Global styles */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
-
-/* Navigation bar */
-.custom-navbar {
-    background-color: #333;
-}
-
-.custom-navbar .navbar-brand {
-    font-size: 1.5rem;
-}
-
-/* Page content */
-.container {
-    max-width: 800px;
-    margin: auto;
+/* Klant form styles */
+#klantForm {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 0 auto;
     padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
 }
 
-h1 {
-    font-size: 2.5rem;
+#klantForm label {
+    margin-bottom: 10px;
+    font-size: 18px;
 }
 
-/* Form styles */
-form {
-    width: 100%;
-}
-
-form label {
-    font-size: 1rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-}
-
-form input {
-    width: 100%;
-    padding: 0.5rem;
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    border-radius: 0.25rem;
+#klantForm input {
+    padding: 5px;
+    border-radius: 5px;
     border: none;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    font-size: 18px;
 }
 
-form input[type="submit"] {
-    background-color: #28a745;
-    color: #fff;
+#klantForm button {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    font-size: 18px;
     font-weight: bold;
-    border-radius: 0.25rem;
-    padding: 0.5rem 1rem;
+    color: #fff;
+    background-color: #3498db;
     cursor: pointer;
 }
 
-/* Table styles */
-table {
-    width: 100%;
-    border-collapse: collapse;
+#klantForm button:hover {
+    background-color: #2980b9;
 }
 
-th,
-td {
-    text-align: left;
-    padding: 0.5rem;
-    border-bottom: 1px solid #ccc;
+/* Klanten list styles */
+#klantenList {
+    margin-top: 20px;
+    width: 50%;
+    margin: 0 auto;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    padding: 20px;
 }
 
-th {
-    background-color: #444;
-    color: #fff;
-    font-weight: bold;
+#klantenList p {
+    margin-bottom: 10px;
+    font-size: 18px;
+    line-height: 1.5;
 }
+
+/* Page title styles */
+h1 {
+    text-align: center;
+    font-size: 36px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ecf0f1;
+    color: #333;
+    text-align: center;
+}
+
+

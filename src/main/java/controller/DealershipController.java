@@ -1,11 +1,10 @@
 package controller;
 
 import entity.CarDealership;
-import service.CarDealershipService;
-
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
+import service.CarDealershipService;
 
 import java.util.List;
 
