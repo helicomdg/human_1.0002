@@ -1,50 +1,74 @@
-form {
+/* Klant form styles */
+#klantForm {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-top: 50px;
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
 }
 
-label {
+#klantForm label {
+    margin-bottom: 10px;
     font-size: 18px;
 }
 
-input[type="text"], input[type="number"] {
-    width: 300px;
-    padding: 10px;
-    margin-bottom: 20px;
-    font-size: 16px;
-}
-
-button {
-    padding: 10px 20px;
-    font-size: 18px;
-    background-color: #007bff;
-    color: #fff;
+#klantForm input {
+    padding: 5px;
+    border-radius: 5px;
     border: none;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    font-size: 18px;
+}
+
+#klantForm button {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #3498db;
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #0062cc;
+#klantForm button:hover {
+    background-color: #2980b9;
 }
 
-body {
-    background-color: #f2f2f2;
+/* Klanten list styles */
+#klantenList {
+    margin-top: 20px;
+    width: 50%;
+    margin: 0 auto;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    padding: 20px;
 }
 
+#klantenList p {
+    margin-bottom: 10px;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+/* Page title styles */
 h1 {
+    text-align: center;
+    font-size: 36px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ecf0f1;
     color: #333;
     text-align: center;
 }
 
-.car-app {
-    margin: 0 auto;
-    width: 80%;
-    max-width: 800px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-    padding: 20px;
-}
 

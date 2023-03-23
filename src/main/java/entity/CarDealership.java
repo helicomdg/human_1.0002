@@ -6,7 +6,7 @@ public class CarDealership {
 
     @Id
     @GeneratedValue
-    private Integer Id;
+    private int Id;
     private String name;
     private String location;
 
@@ -43,11 +43,11 @@ public class CarDealership {
 //    }
 
 
-    public Integer getId() {
+    public int getId() {
         return this.Id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.Id = id;
     }
 

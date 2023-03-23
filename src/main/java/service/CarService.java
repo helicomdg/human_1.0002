@@ -3,6 +3,7 @@ package service;
 import configuration.JPAConfiguration;
 import entity.Car;
 import entity.Car;
+import entity.Klant;
 import repository.CarRepository;
 import java.util.List;
 import java.util.Optional;
@@ -30,23 +31,12 @@ public class CarService {
     public Car deleteCar(Car car) {
         return repository.deleteCar(car);
     }
-
-    public Car getCarById(Long id) {
-        return carDao.getCarById(id);
+    public Car getCar(int id) {
+        return repository.getCar(id);
+    }
+    public Car findCarByid(int id) {
+        return repository.findCarByid(id);
     }
 
-    public Car addCar(Car car) {
-        carDao.addCar(car);
-        return car;
-    }
 
-    public Car updateCar1(Long id, Car car) {
-        carDao.updateCar(car);
-        return car;
-    }
-
-    public boolean deleteCarById(Long id) {
-        carDao.deleteCarById(id);
-        return false;
-    }
 }

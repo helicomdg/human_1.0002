@@ -5,25 +5,22 @@ import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import service.KlantService;
-
 import java.util.List;
 
 @Path("klant")
 public class KlantController {
     private final KlantService klantService;
-
     public KlantController() {
         this.klantService = new KlantService();
     }
 
-    @Path("klanten")
+    @Path("all")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<Klant> getKlanten() {
 //        System.out.println("get Klanten");
         return klantService.getKlanten();
     }
-
     @Path("get/{id}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
@@ -35,7 +32,6 @@ public class KlantController {
             return Response.ok(klant).build();
         }
     }
-
     @POST
     @Path("post")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -44,7 +40,6 @@ public class KlantController {
         Klant createdKlant = klantService.createKlant(klant);
         return Response.ok(createdKlant).build();
     }
-
     @PUT
     @Path("put/{id}")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -58,7 +53,6 @@ public class KlantController {
         Klant updatedKlant = klantService.updateKlant(klant);
         return Response.ok(updatedKlant).build();
     }
-
     @DELETE
     @Path("delete/{id}")
     @Produces(MediaType.APPLICATION_JSON)

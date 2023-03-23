@@ -1,6 +1,8 @@
 package repository;
 import entity.CarDealership;
+import entity.Klant;
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityNotFoundException;
 import jakarta.persistence.TypedQuery;
 import java.util.List;
 
@@ -43,8 +45,6 @@ public class CarDealershipRepository {
         }
         return carDealership;
     }
-
-
     public CarDealership updateCardealership(CarDealership carDealership) {
         try {
             entityManager.getTransaction().begin();
@@ -54,6 +54,28 @@ public class CarDealershipRepository {
         } catch (Exception e) {
             e.printStackTrace();
             entityManager.getTransaction().rollback();
+        }
+        return carDealership;
+    }
+    public CarDealership getCarDealership(int id) {
+        CarDealership carDealership1 = null;
+        try{
+            entityManager.getTransaction().begin();
+            String jpql = "select d from CarDealership d where d.id = :id";
+            TypedQuery<CarDealership> carDealership = entityManager.createQuery(jpql, CarDealership.class);
+            carDealership1 = carDealership.setParameter("id", id).getSingleResult();
+            entityManager.getTransaction().commit();
+        }catch (Exception e){
+            e.printStackTrace();
+            entityManager.getTransaction().rollback();
+        }
+        return carDealership1;
+    }
+    public CarDealership findCarDealershipByid(int id) {
+        CarDealership carDealership = entityManager.find(CarDealership.class, id);
+        if (carDealership == null) {
+            throw new EntityNotFoundException("Can't find carDealership for ID "
+                    + id);
         }
         return carDealership;
     }

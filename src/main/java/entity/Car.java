@@ -61,7 +61,7 @@ public class Car {
 
     public int getId() { return Id; }
 
-    private void  setId(int id) { Id = id; }
+    public void  setId(int id) { Id = id; }
 
     public String getCar_brand() { return car_brand; }
     public void setCar_brand(String car_brand) { this.car_brand = car_brand; }

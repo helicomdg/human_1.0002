@@ -20,6 +20,15 @@
     <label for="email">Email:</label>
     <input type="email" id="email" name="email"><br>
 
+<!--    <label for="adress">Adress:</label>-->
+<!--    <input type="text" id="adress" name="adress"><br>-->
+
+<!--    <label for="bank">Bank:</label>-->
+<!--    <input type="text" id="bank" name="bank"><br>-->
+
+<!--    <label for="geboorteDatum">GeboorteData:</label>-->
+<!--    <input type="text" id="geboorteDatum" name="geboorteDatum"><br>-->
+
     <button type="button" id="createButton">create/post</button>
     <button type="button" id="updateButton">update/put</button>
 <!--    <button type="button" id="getButton">Get All</button>-->
@@ -39,7 +48,8 @@
     function renderKlantenList(klanten) {
         let html = "";
         for (let klant of klanten) {
-            html += `<p>ID: ${klant.id}, Voornaam: ${klant.first_name}, Achternaam: ${klant.last_name}, Email: ${klant.email}</p>`;
+            html += `<p>ID: ${klant.id}, Voornaam: ${klant.first_name}, Achternaam: ${klant.last_name},
+            Email: ${klant.email}, Adress: ${klant.adress}, Bank: ${klant.bank}, GeboorteData: ${klant.geboorteDatum}</p>`;
         }
         klantenList.innerHTML = html;
     }

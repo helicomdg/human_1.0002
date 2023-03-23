@@ -1,7 +1,7 @@
 const apiBaseUrl = "http://localhost:8081/human_2_0_war_exploded/api/klant";
 
 function getKlanten() {
-    return fetch(apiBaseUrl + "/klanten")
+    return fetch(apiBaseUrl + "/all")
         .then((response) => response.json())
         .catch((error) => console.error(error));
 }

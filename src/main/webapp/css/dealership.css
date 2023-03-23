@@ -1,76 +1,74 @@
-/* Set background color for the whole page */
-body {
-    background-color: #f5f5f5;
-}
-
-/* Center the form and title on the page */
-form, h1 {
+/* Klant form styles */
+#klantForm {
+    display: flex;
+    flex-direction: column;
     width: 50%;
     margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
 }
 
-/* Style the title */
+#klantForm label {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+#klantForm input {
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    font-size: 18px;
+}
+
+#klantForm button {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #3498db;
+    cursor: pointer;
+}
+
+#klantForm button:hover {
+    background-color: #2980b9;
+}
+
+/* Klanten list styles */
+#klantenList {
+    margin-top: 20px;
+    width: 50%;
+    margin: 0 auto;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+#klantenList p {
+    margin-bottom: 10px;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+/* Page title styles */
 h1 {
-    color: #00796b;
     text-align: center;
     font-size: 36px;
-    margin-bottom: 20px;
-    font-family: "Open Sans", sans-serif;
+    margin-top: 50px;
+    margin-bottom: 30px;
 }
 
-/* Style the form inputs */
-label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
-}
-
-input[type="text"],
-input[type="tel"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    font-size: 16px;
-    font-family: "Open Sans", sans-serif;
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ecf0f1;
     color: #333;
+    text-align: center;
 }
 
-input[type="text"]:focus,
-input[type="tel"]:focus {
-    outline: none;
-    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Style the create button */
-button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #009688;
-    font-size: 16px;
-    font-family: "Open Sans", sans-serif;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-}
-
-button:hover {
-    background-color: #00796b;
-}
-
-/* Style the result div */
-#result {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #f2f2f2;
-    border-radius: 5px;
-    font-size: 16px;
-    font-family: "Open Sans", sans-serif;
-    color: #333;
-}
 
