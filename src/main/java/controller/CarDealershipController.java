@@ -8,7 +8,7 @@ import service.CarDealershipService;
 
 import java.util.List;
 
-@Path("dealership")
+@Path("shop")
 public class CarDealershipController {
     private final CarDealershipService carDealershipService;
     public CarDealershipController() {

@@ -1,43 +1,43 @@
-const apiBaseUrl = "http://localhost:8081/human_2_0_war_exploded/api/klant";
+const apiBaseUrl = "http://localhost:8081/human_2_0_war_exploded/api/shop";
 
-function getKlanten() {
+function getDealerships() {
     return fetch(apiBaseUrl + "/all")
         .then((response) => response.json())
         .catch((error) => console.error(error));
 }
 
-function getKlantById(id) {
+function getCarDealershipById(id) {
     return fetch(apiBaseUrl + "/get/" + id)
         .then((response) => response.json())
         .catch((error) => console.error(error));
 }
 
-function createKlant(klant) {
+function createCarDealership(carDealership) {
     return fetch(apiBaseUrl + "/post", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify(klant),
+        body: JSON.stringify(carDealership),
     })
         .then((response) => response.json())
         .catch((error) => console.error(error));
 }
 
-function updateKlant(id, klant) {
+function updateCarDealership(id,carDealership) {
     return fetch(apiBaseUrl + "/put/" + id, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify(klant),
+        body: JSON.stringify(carDealership),
     })
         .then((response) => response.json())
         .catch((error) => console.error(error));
 }
 
-function deleteKlant(id) {
+function deleteCarDealership(id) {
     return fetch(apiBaseUrl + "/delete/" + id, {
         method: "DELETE",
     }).catch((error) => console.error(error));
-}manAPI('http://localhost:8081/human_2_0_war_exploded/api/klant');
+}manAPI('http://localhost:8081/human_2_0_war_exploded/api/shop');

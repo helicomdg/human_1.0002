@@ -1,131 +1,90 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>CarDealerships</title>
-    <script type="text/javascript" src="../js/dealership.js"></script>
-    <link rel="stylesheet" type="text/css" href="../css/dealership.css">
+    <title>Shop API Example</title>
+    <link rel="stylesheet" href="../css/dealership.css">
 </head>
 <body>
-<h1>CarDealerships</h1>
-<form>
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required>
+<h1>Shop</h1>
+
+<form id="dealerShipForm">
+    <label for="id">ID:</label>
+    <input type="text" id="id" name="id"><br>
+
+    <label for="name">Naam:</label>
+    <input type="text" id="name" name="name"><br>
+
     <label for="location">Location:</label>
-    <input type="text" id="location" name="location" required><!DOCTYPE html>
-    <html>
-    <head>
-        <title>Klant API Example</title>
-        <link rel="stylesheet" href="../css/klant.css">
-    </head>
-    <body>
-    <h1>Klanten</h1>
+    <input type="text" id="location" name="location"><br>
 
-    <form id="klantForm">
-        <label for="id">ID:</label>
-        <input type="text" id="id" name="id"><br>
-
-        <label for="first_name">Voornaam:</label>
-        <input type="text" id="first_name" name="first_name"><br>
-
-        <label for="last_name">Achternaam:</label>
-        <input type="text" id="last_name" name="last_name"><br>
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email"><br>
-
-        <label for="adress">Adress:</label>
-        <input type="text" id="adress" name="adress"><br>
-
-        <label for="bank">Bank:</label>
-        <input type="text" id="bank" name="bank"><br>
-
-        <label for="geboorteDatum">GeboorteData:</label>
-        <input type="text" id="geboorteDatum" name="geboorteDatum"><br>
-
-        <button type="button" id="createButton">create/post</button>
-        <button type="button" id="updateButton">update/put</button>
-        <!--    <button type="button" id="getButton">Get All</button>-->
-        <button type="button" id="getByIdButton">GetById</button>
-        <button type="button" id="deleteButton">delete</button>
-    </form>
-
-    <div id="klantenList"></div>
-
-    <script src="../js/klant.js"></script>
-    <script>
-        // Get the form and the list of klanten elements
-        const klantForm = document.getElementById("klantForm");
-        const klantenList = document.getElementById("klantenList");
-
-        // Function to render a list of klanten in the klantenList div
-        function renderKlantenList(klanten) {
-            let html = "";
-            for (let klant of klanten) {
-                html += `<p>ID: ${klant.id}, Voornaam: ${klant.first_name}, Achternaam: ${klant.last_name},
-            Email: ${klant.email}, Adress: ${klant.adress}, Bank: ${klant.bank}, GeboorteData: ${klant.geboorteDatum}</p>`;
-            }
-            klantenList.innerHTML = html;
-        }
-
-        // Load the list of klanten on page load
-        window.onload = function () {
-            getKlanten().then((klanten) => renderKlantenList(klanten));
-        };
-
-        // Bind the create button to the createKlant function
-        document.getElementById("createButton").addEventListener("click", function () {
-            const klant = {
-                first_name: document.getElementById("first_name").value,
-                last_name: document.getElementById("last_name").value,
-                email: document.getElementById("email").value,
-            };
-            createKlant(klant).then((createdKlant) => {
-                console.log("Created klant: ", createdKlant);
-                getKlanten().then((klanten) => renderKlantenList(klanten));
-            });
-        });
-
-        // Bind the update button to the updateKlant function
-        document.getElementById("updateButton").addEventListener("click", function () {
-            const id = document.getElementById("id").value;
-            const klant = {
-                first_name: document.getElementById("first_name").value,
-                last_name: document.getElementById("last_name").value,
-                email: document.getElementById("email").value,
-            };
-            updateKlant(id, klant).then((updatedKlant) => {
-                console.log("Updated klant: ", updatedKlant);
-                getKlanten().then((klanten) => renderKlantenList(klanten));
-            });
-        });
-
-        // // Bind the get button to the getKlanten function
-        // document.getElementById("getButton").addEventListener("click", function () {
-        //     getKlanten().then((klanten) => renderKlantenList(klanten));
-        // });
-
-        // Bind the get by id button to the getKlanten function
-        document.getElementById("getByIdButton").addEventListener("click", function () {
-            const id = document.getElementById("id").value;
-            getKlantById(id).then((klant) => {
-                console.log("Klant by ID: ", klant);
-                renderKlantenList([klant]);
-            });
-        });
-        // Bind the delete button to the delete klant function
-        document.getElementById("deleteButton").addEventListener("click", function () {
-            const id = document.getElementById("id").value;
-            deleteKlant(id).then((deletedKlant) => {
-                console.log("Deleted klant: ", deletedKlant);
-                getKlanten().then((klanten) => renderKlantenList(klanten));
-            });
-        });
-    </script>
-    </body>
-    </html>
-
-    <button type="button" onclick="createCarDealership()">Create</button>
+    <button type="button" id="createButton">create/post</button>
+    <button type="button" id="updateButton">update/put</button>
+    <!--    <button type="button" id="getButton">Get All</button>-->
+    <button type="button" id="getByIdButton">GetById</button>
+    <button type="button" id="deleteButton">delete</button>
 </form>
-<div id="result"></div>
+
+<div id="carDealershipsList"></div>
+
+<script src="../js/dealership.js"></script>
+<script>
+    const carDealershipForm = document.getElementById("carDealershipForm");
+    const carDealershipsList = document.getElementById("carDealershipsList");
+
+    function renderCarDealershipsList(carDealerships) {
+        let html = "";
+        for (let carDealership of carDealerships) {
+            html += `<p>ID: ${carDealership.id}, Name: ${carDealership.name}, Location: ${carDealership.location}</p>`;
+        }
+        carDealershipsList.innerHTML = html;
+    }
+
+    function getCarDealerships() {
+    }
+
+    window.onload = function () {
+        getCarDealerships().then((carDealerships) => renderCarDealershipsList(carDealerships));
+    };
+
+    document.getElementById("createButton").addEventListener("click", function () {
+        const carDealership = {
+            name: document.getElementById("name").value,
+            location: document.getElementById("location").value,
+        };
+        createCarDealership(carDealership).then((createdCarDealership) => {
+            console.log("Created carDealership: ", createdCarDealership);
+            getCarDealerships().then((carDealerships) => renderCarDealershipsList(carDealerships));
+        });
+    });
+
+
+    document.getElementById("updateButton").addEventListener("click", function () {
+        const id = document.getElementById("id").value;
+        const carDealership = {
+            name: document.getElementById("name").value,
+            location: document.getElementById("location").value,
+        };
+        updateCarDealership(id, carDealership).then((updatedCarDealership) => {
+            console.log("Updated carDealership: ", updatedCarDealership);
+            getCarDealerships().then((carDealerships) => renderKlantenList(carDealerships));
+        });
+    });
+
+    document.getElementById("getByIdButton").addEventListener("click", function () {
+        const id = document.getElementById("id").value;
+        getCarDealershipById(id).then((carDealership) => {
+            console.log("CarDealership by ID: ", carDealership);
+            renderCarDealershipsList([carDealership]);
+        });
+    });
+
+    document.getElementById("deleteButton").addEventListener("click", function () {
+        const id = document.getElementById("id").value;
+        deleteCarDealership(id).then((deletedCarDealership) => {
+            console.log("Deleted carDealership: ", deletedCarDealership);
+            getCarDealerships().then((carDealership) => renderCarDealershipsList(carDealership));
+        });
+    });
+</script>
 </body>
 </html>
